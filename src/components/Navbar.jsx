@@ -25,14 +25,14 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="min-h-10 bg-transparent hover:bg-white  shadow-md">
+        <div className="min-h-10 bg-transparent hover:lg:bg-white  shadow-md">
             <div className="w-11/12 container mx-auto py-3 grid grid-cols-5">
                 <div className="col-span-1 flex items-end justify-start">
-                    <NavLink to={'/'}><button><HiHome className="text-3xl" /></button></NavLink>
+                    <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl" /></button></NavLink>
                 </div>
 
                 <div className="col-span-3 flex justify-center items-center gap-3">
-                    <h2 className="text-sage-green-700 text-4xl font-semibold">ClayNest</h2>
+                    <h2 className="text-sage-green-700 text-2xl lg:text-4xl font-semibold">ClayNest</h2>
                 </div>
 
                 <div className="hidden lg:flex gap-2">
@@ -42,10 +42,10 @@ const Navbar = () => {
                 <div className="lg:hidden flex justify-end">
                     <button onClick={() => setOpen(!open)}>
                         {
-                            open === true ? <AiOutlineClose className="text-3xl"> </AiOutlineClose> : <AiOutlineMenu className="text-3xl ease-out duration-1000"></AiOutlineMenu >
+                            open === true ? <AiOutlineClose className="text-2xl lg:text-3xl ease-out duration-1000"> </AiOutlineClose> : <AiOutlineMenu className="text-2xl lg:text-3xl ease-out duration-1000"></AiOutlineMenu >
                         }
                     </button>
-                <div className={`md:flex duration-1000 gap-5 absolute md:static bg-ceramic-bg ${open ? 'right-0 top-16' : 'top-16 -right-96'} py-4 px-4 rounded-b-lg shadow-md`}>
+                <div className={`md:flex duration-1000 gap-5 absolute md:static bg-ceramic-bg ${open ? 'right-0 top-14' : 'right-0 -top-96'} py-4 px-4 rounded-b-lg shadow-md`}>
                 <ul className="flex flex-col justify-center items-end gap-5 pb-3">
                     {
                         mainMenuPhone
