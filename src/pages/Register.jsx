@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const { createUser } = useContext(AuthContext);
+    const [signupError, setSignupError] = useState([])
+    const [success, setSuccess] = useState('')
+
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
     }
 
-    const handleFormSubmit = e => {
+
+
+
+
+
+
+    const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value
@@ -18,6 +31,63 @@ const Register = () => {
         const password = form.password.value
         const formData = { name, email, photoURL, password }
         console.log(formData);
+        setSignupError('')
+        setSuccess('')
+
+
+        const successToast = () => toast.success('Profile Created');
+        const errorToast = () => toast.error('Profile Updated Failed');
+        const passwordToast = () => toast.error('Password must have 6 charecter');
+        const passwordToast2 = () => toast.error('Password must contain 1 LowerCase Letter');
+        const passwordToast3 = () => toast.error('Password must contain 1 UpperCase Letter');
+
+        const upperCase = /[A-Z]/;
+        const lowerCase = /[a-z]/;
+
+        if (password.length < 6) {
+            // setSignupError(() => toast.error('Password Should be at least 6 Carecter'));
+            passwordToast()
+
+            return;
+        }
+        else if (!upperCase.test(password)) {
+            // setSignupError(() => toast.error('Add At least One UpperCase'));
+            passwordToast3()
+            return;
+        }
+        else if (!lowerCase.test(password)) {
+            // setSignupError(() => toast.error('Add At least One LowerCase'));
+            passwordToast2()
+            return;
+        }
+        console.log(e.currentTarget)
+        console.log(form)
+        console.log(name, email, photoURL, password);
+
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                // setSuccess(() => toast.success('Your Account Created Successfully!'))
+                successToast()
+
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photoURL,
+                })
+                    .then(() => {
+                        // setSuccess(() => toast.success('Profile has been updated'));
+                        // successToast()
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            })
+            .catch(error => {
+                console.log(error);
+                setSignupError(error.message);
+                errorToast()
+            })
     }
     return (
         <div className='w-11/12 container mx-auto my-10'>
@@ -39,7 +109,7 @@ const Register = () => {
                         Let’s get you all set up so you can verify your personal account and begin setting up your profile.
                     </p>
 
-                    <form onSubmit={handleFormSubmit} className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+                    <form onSubmit={handleRegister} className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
                         <div>
                             <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Name</label>
                             <input type="text" name="name" placeholder="Enter your name" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
