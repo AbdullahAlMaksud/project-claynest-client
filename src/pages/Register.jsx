@@ -4,23 +4,15 @@ import { AuthContext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 
-
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { createUser } = useContext(AuthContext);
     const [signupError, setSignupError] = useState([])
     const [success, setSuccess] = useState('')
 
-
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
     }
-
-
-
-
-
-
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -30,54 +22,38 @@ const Register = () => {
         const photoURL = form.photoURL.value
         const password = form.password.value
         const formData = { name, email, photoURL, password }
-        console.log(formData);
         setSignupError('')
         setSuccess('')
-
-
         const successToast = () => toast.success('Profile Created');
         const errorToast = () => toast.error('Profile Updated Failed');
         const passwordToast = () => toast.error('Password must have 6 charecter');
         const passwordToast2 = () => toast.error('Password must contain 1 LowerCase Letter');
         const passwordToast3 = () => toast.error('Password must contain 1 UpperCase Letter');
-
         const upperCase = /[A-Z]/;
         const lowerCase = /[a-z]/;
 
         if (password.length < 6) {
-            // setSignupError(() => toast.error('Password Should be at least 6 Carecter'));
             passwordToast()
-
             return;
         }
         else if (!upperCase.test(password)) {
-            // setSignupError(() => toast.error('Add At least One UpperCase'));
             passwordToast3()
             return;
         }
         else if (!lowerCase.test(password)) {
-            // setSignupError(() => toast.error('Add At least One LowerCase'));
             passwordToast2()
             return;
         }
-        console.log(e.currentTarget)
-        console.log(form)
-        console.log(name, email, photoURL, password);
-
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                // setSuccess(() => toast.success('Your Account Created Successfully!'))
                 successToast()
-
                 updateProfile(result.user, {
                     displayName: name,
                     photoURL: photoURL,
                 })
                     .then(() => {
-                        // setSuccess(() => toast.success('Profile has been updated'));
-                        // successToast()
                     })
                     .catch((error) => {
                         console.log(error)
@@ -88,6 +64,11 @@ const Register = () => {
                 setSignupError(error.message);
                 errorToast()
             })
+
+            console.log(formData);
+            console.log(e.currentTarget)
+            console.log(form)
+            console.log(name, email, photoURL, password);    
     }
     return (
         <div className='w-11/12 container mx-auto my-10'>
