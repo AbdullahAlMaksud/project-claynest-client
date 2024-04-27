@@ -5,12 +5,12 @@ import { Toaster } from 'react-hot-toast';
 
 const MainLayout = () => {
     return (
-        <>
+        <div className='bg-ceramic-bg dark:bg-slate-950'>
         <Navbar/>
         <Outlet/>
         <Footer/>
         <Toaster />
-        </>
+        </div>
     );
 };
 

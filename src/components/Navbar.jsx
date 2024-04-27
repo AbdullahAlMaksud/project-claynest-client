@@ -61,7 +61,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="min-h-10 bg-transparent hover:lg:bg-white  shadow-md">
+        <div className="min-h-10 bg-transparent hover:lg:bg-white  shadow-md z-50">
             <div className="w-11/12 container mx-auto py-3 lg:py-7 grid grid-cols-5">
                 <div className="col-span-1 flex items-end justify-start">
                     <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl" /></button></NavLink>
@@ -103,7 +103,7 @@ const Navbar = () => {
                             open === true ? <AiOutlineClose className="text-2xl lg:text-3xl ease-out duration-1000"> </AiOutlineClose> : <AiOutlineMenu className="text-2xl lg:text-3xl ease-out duration-1000"></AiOutlineMenu >
                         }
                     </button>
-                    <div className={`md:flex duration-1000 gap-5 absolute z-40 bg-ceramic-bg ${open ? 'right-0 top-14' : 'right-0 -top-96'} py-4 px-4 rounded-b-lg shadow-md`}>
+                    <div className={`md:flex duration-1000 gap-5 absolute z-40 bg-ceramic-bg dark:bg-slate-950 ${open ? 'right-0 top-14' : 'right-0 -top-96'} py-4 px-4 rounded-b-lg shadow-md`}>
                         <ul className="flex flex-col justify-center items-end gap-5 pb-3">
                             {
                                 mainMenuPhone
