@@ -1,4 +1,3 @@
-import React from 'react';
 
 const ErrorPages = () => {
     return (
@@ -8,4 +7,4 @@ const ErrorPages = () => {
     );
 };
 
-export default ErrorPages;<h2>Error Pages</h2>
+export default ErrorPages; <h2>Error Pages</h2>

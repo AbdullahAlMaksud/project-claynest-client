@@ -19,13 +19,13 @@ function App() {
     console.log(formData);
     e.target.reset();
 
-    fetch('https://b9a10-clay-nest-server.vercel.app/craftItems',{
+    fetch('https://b9a10-clay-nest-server.vercel.app/craftItems', {
       method: 'POST',
-      headers: {'content-type':'application/json'},
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(formData)
     })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
+      .then(res => res.json())
+      .then(data => console.log(data))
 
   };
 
