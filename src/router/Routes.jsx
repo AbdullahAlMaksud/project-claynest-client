@@ -11,6 +11,7 @@ import AddPotteryItems from "../pages/AddPotteryItems";
 import PrivateRoute from "./PrivateRoute";
 import MyPotteryItems from "../pages/MyPotteryItems";
 import ItemDetails from "../pages/ItemDetails";
+import UpdatePotteryItems from "../pages/UpdatePotteryItems";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
             {
                 path: '/itemDetails/:id',
                 element: <PrivateRoute><ItemDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+            },
+            {
+                path: '/updateItem/:id',
+                element: <PrivateRoute><UpdatePotteryItems/></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
             },
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { HiHome } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
@@ -49,7 +49,6 @@ const Navbar = () => {
         <NavLink to={'/allItems'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>All Ceramic & Pottery Items</NavLink>
         <NavLink to={'/addItem'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>Add Ceramic & Pottery Item</NavLink>
         <NavLink to={`/myItems`} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>My Ceramic & Pottery List</NavLink>
-
         {
             user ? <div className="flex pr-5 gap-2" >
                 <div className="relative hover:cursor-pointer" data-tooltip-id="profileName" id="clickable" >
@@ -73,8 +72,6 @@ const Navbar = () => {
                     </Link>
                 </div>
         }
-
-
     </>
 
     return (
@@ -89,7 +86,6 @@ const Navbar = () => {
                         <h2 className="text-sage-green-700 text-2xl lg:text-4xl font-light hover:cursor-pointer">ClayNest</h2>
                     </Link>
                 </div>
-
                 {
                     user ?
                         <div className="hidden lg:flex justify-end gap-2" >

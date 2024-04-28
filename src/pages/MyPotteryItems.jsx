@@ -16,6 +16,10 @@ const MyPotteryItems = () => {
             });
     }, [user])
 
+    const handleUpdateData = (id) =>{
+        console.log(id)
+    }
+
 
 
     return (
@@ -28,11 +32,16 @@ const MyPotteryItems = () => {
                             <div tabIndex={0} role="button" className="btn bg-terra-cotta text-lg font-medium text-white w-60">Filter <IoIosArrowDown></IoIosArrowDown></div>
                             <div className="flex justify-center">
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-b-lg text-center  w-full  ">
-                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Rating</Link>
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Clay-made pottery</Link>
                                     </li>
-                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Number of pages</Link>
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Stoneware</Link>
                                     </li>
-                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Publisher Year</Link>
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Porcelain</Link></li>
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Terra Cotta</Link></li>
+                                    
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Ceramics & Architectural</Link></li>
+
+                                    <li><Link className="hover:bg-gray-600 hover:rounded-lg hover:text-white py-1 text-base">Home decor pottery</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -49,15 +58,17 @@ const MyPotteryItems = () => {
                             <div className="w-full p-4 md:p-7">
                                 <h1 className="text-xl font-bold text-gray-800 dark:text-white">{product.product_name}</h1>
                                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{product.short_description}</p>
-                                <div className="flex mt-2 item-center">
-                                    <p className='flex items-center'>Rating: <span>{product.rating}</span> <FaStar /></p>
+                                <div className="flex mt-2 gap-5 item-center">
+                                    <p className='flex items-center gap-2'>Rating: <span>{product.rating}</span><FaStar /></p>
+                                    <h1 className="text-gray-700 dark:text-gray-200 md:text-xl">Cutomization: {product.customization}</h1>
+                                    <h1 className="text-gray-700 dark:text-gray-200 md:text-xl">Stock: {product.stockStatus}</h1>
                                 </div>
                                 <div className="flex justify-between mt-3 item-center">
                                     <h1 className="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">${product.price}</h1>
 
                                 </div>
                                 <div className='flex justify-between mt-5'>
-                                    <button className="px-2 w-2/5 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-sage-green-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Update</button>
+                                    <Link to={`/updateItem/${product._id}`} className=" text-center w-2/5 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-sage-green-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Update</Link>
                                     <button className="px-2 w-2/5 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-amber-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Detele</button>
                                 </div>
                             </div>
