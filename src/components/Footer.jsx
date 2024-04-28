@@ -1,32 +1,46 @@
+import { BsPhone } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer className="bg-white/90 dark:bg-gray-900">
             <div className="w-11/12 container py-8 mx-auto">
-                <div className="flex flex-col items-center text-center">
-                    <a href="#">
-                        <img className="w-auto h-7" src="favicon.svg" alt="" /> 
-                    </a>
-
-                    <div className="flex flex-wrap justify-center mt-6 gap-3 md:gap-0">
-                        <Link to={'/'} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> Home </Link>
-
-                        <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> All Items </Link>
-
-                        <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> Add Item </Link>
-
-                        <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> My Items </Link>
-
-                        <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> About </Link>
+                <div className='md:flex items-end justify-between'>
+                    <div className="flex flex-col md:items-start items-center text-center">
+                        <div className='flex flex-col md:flex-row md:gap-2  gap-1 items-center'>
+                            <a href="#">
+                                <img className="w-auto h-7" src="favicon.svg" alt="" />
+                            </a>
+                            <p className='font-light text-xl text-sage-green-800 dark:text-sage-green-100'>ClayNest Inc.</p>
+                        </div>
+                        <div className='pt-2'>
+                            <p className='text-sm'>51/A, Kazi Nazrul Islam Avenue, Dhaka-1216.</p>
+                            <div className='flex gap-3'>
+                                <p className='flex items-center gap-2 text-sm'><MdEmail /> <span>info@claynest.com</span></p>
+                                <p className='flex items-center gap-2 text-sm'><BsPhone /> <a href='tel:+8801767211795'>+880 1767 211795</a></p>
+                            </div>
+                        </div>
                     </div>
+                    <div>
+                        <div className="flex flex-wrap justify-center mt-6 gap-3 md:gap-0">
+                            <Link to={'/'} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> Home </Link>
 
+                            <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> All Items </Link>
+
+                            <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> Add Item </Link>
+
+                            <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> My Items </Link>
+
+                            <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> About </Link>
+                        </div>
+                    </div>
                 </div>
 
                 <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
                 <div className="flex flex-col items-center sm:flex-row sm:justify-between gap-4">
-                    <p className="text-sm text-gray-500 dark:text-gray-300">© Copyright 2024. All Rights Reserved. | ClayNest</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-300">© Copyright 2024. All Rights Reserved. | ClayNest Inc.</p>
 
                     <div className="flex -mx-2">
 
