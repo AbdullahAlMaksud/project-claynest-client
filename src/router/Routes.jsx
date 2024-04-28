@@ -39,11 +39,10 @@ const router = createBrowserRouter([
                 path: '/addItem',
                 element: <PrivateRoute><AddPotteryItems /></PrivateRoute>
             },
-            // {
-            //     path: '/myItems/:email',
-            //     element: <PrivateRoute><MyPotteryItems /></PrivateRoute>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.email}`)
-            // },
+            {
+                path: '/myItems',
+                element: <PrivateRoute><MyPotteryItems /></PrivateRoute>,
+            },
             {
                 path: '/itemDetails/:id',
                 element: <PrivateRoute><ItemDetails /></PrivateRoute>,
