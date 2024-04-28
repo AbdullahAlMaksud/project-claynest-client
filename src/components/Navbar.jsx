@@ -75,7 +75,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="min-h-10 bg-transparent hover:lg:bg-white dark:hover:lg:bg-black  shadow-md z-50">
+        <div className="min-h-10 bg-transparent hover:lg:bg-white dark:hover:lg:bg-black/30  shadow-md z-50">
             <div className="w-11/12 container mx-auto py-3 lg:py-7 grid grid-cols-5">
                 <div className="col-span-1 flex items-end justify-start">
                     <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl" /></button></NavLink>
