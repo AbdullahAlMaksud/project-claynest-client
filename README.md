@@ -32,14 +32,14 @@ This website serves as an online platform for ClayNest Inc., providing users wit
   - Node.js: A JavaScript runtime environment for executing server-side code.
 
 - **Deployment:**
-  - Frontend: Deployed on Firebase hosting.
-  - Backend: Deployed on Vercel.
+  - Frontend: Deployed on Firebase hosting. ([Client-side repository](https://github.com/programming-hero-web-course-4/B9A10-client-side-AbdullahAlMaksud))
+  - Backend: Deployed on Vercel. ([Server-side repository](https://github.com/programming-hero-web-course-4/b9a10-server-side-AbdullahAlMaksud))
 
-## Contact Information
+## Developer Contact Information
 
-- **Address:** 51/A, Kazi Nazrul Islam Avenue, Dhaka-1216
-- **Email:** [info@claynest.com](mailto:info@claynest.com)
-- **Phone:** +880 1767 211795
+- **Email:** [maksud.workspace@gmail.com](mailto:maksud.workspace@gmail.com)
+- **Github:** [https://github.com/AbdullahAlMaksud](https://github.com/AbdullahAlMaksud)
+- **Facebook:** [https://facebook.com/maksud51](https://facebook.com/maksud51)
 
 ## Getting Started
 
