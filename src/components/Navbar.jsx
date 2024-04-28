@@ -48,7 +48,7 @@ const Navbar = () => {
         <NavLink to={'/'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>Home</NavLink>
         <NavLink to={'/allItems'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>All Ceramic & Pottery Items</NavLink>
         <NavLink to={'/addItem'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>Add Ceramic & Pottery Item</NavLink>
-        <NavLink to={'/myItems'} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>My Ceramic & Pottery List</NavLink>
+        <NavLink to={`/myItems/${user}`} className={'px-5 py-1 rounded-lg hover:bg-sage-green-700 hover:text-text-gray-50'}>My Ceramic & Pottery List</NavLink>
 
         {
             user ? <div className="flex pr-5 gap-2" >

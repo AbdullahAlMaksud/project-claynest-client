@@ -62,7 +62,7 @@ const AllPotteryItems = () => {
                                                     {singleData.user_email}
                                                 </td>
                                                 <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap flex justify-center">
-                                                    <Link>
+                                                    <Link to={`/itemDetails/${singleData._id}`}>
                                                         <button className="bg-sage-green-700 text-white px-3 rounded-full hover:bg-sage-green-600"> Details</button>
                                                     </Link>
                                                 </td>

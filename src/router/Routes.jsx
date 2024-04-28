@@ -24,28 +24,30 @@ const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <Login/>
+                element: <Login />
             },
             {
                 path: '/register',
-                element: <Register/>
+                element: <Register />
             },
             {
                 path: '/allItems',
-                element:            <AllPotteryItems/>,
-                loader: ()=>fetch(`http://localhost:5000/craftItems`)
+                element: <AllPotteryItems />,
+                loader: () => fetch(`http://localhost:5000/craftItems`)
             },
             {
                 path: '/addItem',
-                element: <PrivateRoute><AddPotteryItems/></PrivateRoute>
+                element: <PrivateRoute><AddPotteryItems /></PrivateRoute>
             },
+            // {
+            //     path: '/myItems/:email',
+            //     element: <PrivateRoute><MyPotteryItems /></PrivateRoute>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.email}`)
+            // },
             {
-                path: '/myItems',
-                element: <PrivateRoute><MyPotteryItems/></PrivateRoute>
-            },
-            {
-                path: '/itemDetails',
-                element: <PrivateRoute><ItemDetails/></PrivateRoute>
+                path: '/itemDetails/:id',
+                element: <PrivateRoute><ItemDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
             },
 
         ]
