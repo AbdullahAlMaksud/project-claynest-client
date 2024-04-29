@@ -21,7 +21,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: ()=>fetch('http://localhost:5000/craftCategory')
             },
             {
                 path: '/login',
