@@ -14,7 +14,7 @@ const Footer = () => {
                             </a>
                             <p className='font-light text-xl text-sage-green-800 dark:text-sage-green-100'>ClayNest Inc.</p>
                         </div>
-                        <div className='pt-2'>
+                        <div className='pt-2 dark:text-gray-300'>
                             <p className='text-sm'>51/A, Kazi Nazrul Islam Avenue, Dhaka-1216.</p>
                             <div className='flex gap-3'>
                                 <p className='flex items-center gap-2 text-sm'><MdEmail /> <span>info@claynest.com</span></p>
@@ -23,7 +23,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="flex flex-wrap justify-center mt-6 gap-3 md:gap-0">
+                        <div className="flex flex-wrap justify-center mt-3 gap-3 md:gap-0">
                             <Link to={'/'} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> Home </Link>
 
                             <Link to={''} className="md:mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-sage-green-500 dark:text-gray-300 dark:hover:text-sage-green-400" aria-label="Reddit"> All Items </Link>
@@ -37,10 +37,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
+                <hr className="my-2 border-gray-200 md:my-10 dark:border-gray-700" />
 
                 <div className="flex flex-col items-center sm:flex-row sm:justify-between gap-4">
-                    <p className="text-sm text-gray-500 dark:text-gray-300">© Copyright 2024. All Rights Reserved. | ClayNest Inc.</p>
+                    <p className="text-sm text-gray-500 text-center lg:text-left dark:text-gray-300">© Copyright 2024. All Rights Reserved. | ClayNest Inc.</p>
 
                     <div className="flex -mx-2">
 

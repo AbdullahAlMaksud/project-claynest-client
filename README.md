@@ -32,11 +32,16 @@ This website serves as an online platform for ClayNest Inc., providing users wit
 
 - **Frontend:**
   - React.js: A JavaScript library for building user interfaces.
-  - Tailwind CSS: A utility-first CSS framework for quickly building custom designs.
   - React Router DOM: A library for routing in React applications.
-  - React Typewriter: A React component for creating a typewriter effect.
+  - Tailwind CSS: A utility-first CSS framework for quickly building custom designs.
   - DaisyUI: A set of useful Tailwind CSS components.
+  - React Typewriter: A React component for creating a typewriter effect.
   - React Tooltip: A lightweight tooltip library for React.
+  - React Icons: Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+  - React Fast Marquee: React Fast Marquee is a lightweight React component that harnesses the power of CSS animations to create silky smooth marquees.
+  - Swiper JS: Swiper JS is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.
+
+  - React Fast Marquee: React Fast Marquee is a lightweight React component that harnesses the power of CSS animations to create silky smooth marquees.
 
 - **Backend:**
   - MongoDB: A NoSQL database for storing application data.

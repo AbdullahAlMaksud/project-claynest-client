@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa6";
+import { FcViewDetails } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const DisplayProducts = () => {
@@ -11,45 +13,50 @@ const DisplayProducts = () => {
             .then(data => setProducts(data))
     }, [])
 
-
-    // const sixProducts = []
-    // const randomizeProducts = (products) => {
-    //     for (let i = products.length - 1; i > 0; i--) {
-    //         const j = Math.floor(Math.random()*(i+1));
-    //         [products[i], products[j]] = [products[j],products[i]];
-    //     }
-    //     return products;
-    // }
-
-    // const onlySixData = (products) =>{
-    //     const newProd = randomizeProducts([...products]);
-    //     return newProd.slice(0,6);
-    // }
-
-    // const randomSixProducts = onlySixData(sixProducts);
-
     console.log(products)
     return (
-        <div className='w-11/12 container mx-auto my-20'>
-            <h2 className='text-center text-2xl md:text-4xl font-bold md:col-span-2 lg:col-span-3 lg:text-right'>Our Items</h2>
-            <p className='text-center text-sm md:text-xl md:col-span-2 lg:col-span-3 pb-10 lg:pl-96 lg:text-right'>Discover artisanal pottery in various styles, from traditional clay-made pieces to contemporary home decor pottery. Explore our curated collection for timeless designs that add character to any space.</p>
-            <div className='grid lg:grid-cols-3 gap-2'>
+        <div className='w-11/12 container mx-auto mt-10 mb-20'>
+            <h2 className='text-center text-2xl md:text-4xl font-semibold pb-2 md:col-span-2 lg:col-span-3 lg:text-right text-sage-green-900 dark:text-white'>Our Products</h2>
+            <p className='text-center  md:col-span-2 lg:col-span-3 pb-10 lg:pl-96 lg:text-right text-gray-600 dark:text-gray-300'>Discover artisanal pottery in various styles, from traditional clay-made pieces to contemporary home decor pottery. Explore our curated collection for timeless designs that add character to any space.</p>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+
                 {
                     products.slice(0, 6).map((product, idx) =>
 
-                        <div key={idx} className=" overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                            <div className="px-6 py-4">
-                                <h1 className="text-xl font-bold text-gray-800 dark:text-white">{product.product_name}</h1>
-                                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{product.short_description}</p>
+                    <div key={idx}>
+                    <section className="">
+                            <div className="rounded-xl bg-white dark:bg-white/5 p-5 shadow-lg hover:shadow-xl">
+                              <div href="#">
+                                <div className="relative flex items-end justify-center h-40 lg:h-52 overflow-hidden rounded-xl ">
+                                  <img src={product.imageURL} className='w-full h-52 rounded-2xl object-cover mx-auto'  alt="Product Photo" />
+                                  <div className="absolute bottom-3 left-3 inline-flex items-start rounded-lg bg-white dark:bg-sage-green-700 p-2 shadow-md">
+                                    <FaStar className="text-yellow-600 dark:text-yellow-400"/>
+                                    <span className="text-slate-400 ml-1 text-sm dark:text-gray-200">{product.rating}.0</span>
+                                  </div>
+                                </div>
+                    
+                                <div className="mt-1 p-2">
+                                  <h2 className="text-slate-700 text-xl dark:text-white">{product.product_name}</h2>
+                                  <p className="text-slate-400 mt-1 truncate">{product.short_description}</p>
+                    
+                                  <div className="mt-3 flex items-end justify-between">
+                                    <p>
+                                      <span className="text-lg font-bold text-blue-500 dark:text-blue-500">${product.price}</span>
+                                      <span className="text-slate-400 text-sm"> only!</span>
+                                    </p>
+                    
+                                    <Link to={`/itemDetails/${product._id}`} className="group inline-flex gap-2 rounded-xl bg-blue-100 dark:bg-blue-900 px-4 py-2 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                      <FcViewDetails className="text-2xl"/>
+                                      <span className="font-medium font-titillium text-base text-blue-800 dark:text-blue-200">Details</span>
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-
-                            <img className="object-contain w-full h-48 mt-2" src={product.imageURL} alt="NIKE AIR" />
-
-                            <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-                                <h1 className="text-lg font-bold text-white">${product.price}</h1>
-                                <Link to={`/itemDetails/${product._id}`} className="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">View Details</Link>
-                            </div>
-                        </div>
+                            
+                          
+                        </section>
+                    </div>
 
                     )
 

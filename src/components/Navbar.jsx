@@ -4,12 +4,15 @@ import { HiHome } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
-import ThemeSwtitcher from "./DarkModeToggle.jsx";
+import ThemeSwtitcher from "../utility/DarkModeToggle.jsx";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+
     const { user, logOut } = useContext(AuthContext);
     const PLACES = ['top']
+
+    
 
     const handleLogOut = () => {
         logOut()
@@ -61,8 +64,8 @@ const Navbar = () => {
         <div className="min-h-10 bg-transparent hover:lg:bg-white dark:hover:lg:bg-black/30  shadow-md z-50">
             <div className="w-11/12 container mx-auto py-3 lg:py-7 grid grid-cols-5">
                 <div className="col-span-1 flex items-end justify-start">
-                    <div className="flex items-center justify-center">
-                    <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl" /></button></NavLink>
+                    <div className="flex items-start justify-center gap-2">
+                    <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl dark:text-white" /></button></NavLink>
                     <ThemeSwtitcher/>
                     </div>
                 </div>
@@ -104,6 +107,8 @@ const Navbar = () => {
                             </Link>
                         </div>
                 }
+
+
                 <div className="lg:hidden flex justify-end">
                     <button onClick={() => setOpen(!open)}>
                         {
@@ -119,6 +124,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
+
             <div className="hidden lg:flex justify-center">
                 <ul className="flex justify-center gap-5 pb-3">
                     {

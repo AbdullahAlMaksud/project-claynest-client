@@ -45,17 +45,17 @@ const AllPotteryItems = () => {
                                     <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                         {
                                             allData.map((singleData, idx) => <tr key={idx}>
-                                                <td className="pl-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <td className="pl-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
                                                     {idx + 1}
                                                 </td>
-                                                <td className=" py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <td className=" py-4 text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
                                                     <img src={singleData.imageURL} className="w-5" alt="" />
                                                 </td>
 
-                                                <td className="pr-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <td className="pr-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
                                                     {singleData.product_name}
                                                 </td>
-                                                <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <td className="px-12 py-4 text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
                                                     {singleData.subcategory_Name}
                                                 </td>
                                                 <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
