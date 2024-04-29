@@ -23,24 +23,21 @@ const DarkModeToggle = () => {
     <div className="flex items-center justify-center">
       <button
         onClick={toggleDarkMode}
-        className={`rounded-full w-8 h-8 flex items-center justify-center focus:outline-none ${
-          darkMode ? 'bg-gray-800' : 'bg-gray-200'
-        }`}
+        className={`rounded-full w-8 h-8 flex items-center justify-center focus:outline-none ${darkMode ? 'bg-gray-800' : 'bg-gray-200'
+          }`}
       >
         <div
-        
-          className={`w-6 h-6 text-white dark:text-gray-800 rounded-full flex items-center justify-center ${
-            darkMode ? 'block' : 'hidden'
-          }`}
+
+          className={`w-6 h-6 text-white dark:text-gray-800 rounded-full flex items-center justify-center ${darkMode ? 'block' : 'hidden'
+            }`}
         >
-          <MdDarkMode className='text-white text-xl'/>
+          <MdDarkMode className='text-white text-xl' />
         </div>
         <div
-          className={`w-6 h-6 rounded-full flex items-center justify-center text-gray-800 dark:text-white ${
-            darkMode ? 'hidden' : 'block'
-          }`}
+          className={`w-6 h-6 rounded-full flex items-center justify-center text-gray-800 dark:text-white ${darkMode ? 'hidden' : 'block'
+            }`}
         >
-          <MdLightMode className='text-xl'/>
+          <MdLightMode className='text-xl' />
         </div>
       </button>
     </div>

@@ -17,12 +17,10 @@ const DisplayProducts = () => {
     return (
         <div className='w-11/12 container mx-auto mt-10 mb-20'>
             <h2 className='text-center text-2xl md:text-4xl font-semibold pb-2 md:col-span-2 lg:col-span-3 lg:text-right text-sage-green-900 dark:text-white'>Our Products</h2>
-            <p className='text-center  md:col-span-2 lg:col-span-3 pb-10 lg:pl-96 lg:text-right text-gray-600 dark:text-gray-300'>Discover artisanal pottery in various styles, from traditional clay-made pieces to contemporary home decor pottery. Explore our curated collection for timeless designs that add character to any space.</p>
+            <p className='text-center  md:col-span-2 lg:col-span-3 pb-10 lg:pl-96 lg:text-right text-gray-600 dark:text-gray-300'>Explore Artisanal Elegance Discover the charm of handcrafted pottery with our exclusive collection at ClayNest Inc. From the earthy allure of terra cotta to the refined grace of porcelain, each piece is a testament to the timeless art of ceramics.</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-
                 {
                     products.slice(0, 6).map((product, idx) =>
-
                     <div key={idx}>
                     <section className="">
                             <div className="rounded-xl bg-white dark:bg-white/5 p-5 shadow-lg hover:shadow-xl">
@@ -34,11 +32,9 @@ const DisplayProducts = () => {
                                     <span className="text-slate-400 ml-1 text-sm dark:text-gray-200">{product.rating}.0</span>
                                   </div>
                                 </div>
-                    
                                 <div className="mt-1 p-2">
                                   <h2 className="text-slate-700 text-xl dark:text-white">{product.product_name}</h2>
                                   <p className="text-slate-400 mt-1 truncate">{product.short_description}</p>
-                    
                                   <div className="mt-3 flex items-end justify-between">
                                     <p>
                                       <span className="text-lg font-bold text-blue-500 dark:text-blue-500">${product.price}</span>
@@ -53,13 +49,9 @@ const DisplayProducts = () => {
                                 </div>
                               </div>
                             </div>
-                            
-                          
                         </section>
                     </div>
-
                     )
-
                 }
             </div>
         </div>

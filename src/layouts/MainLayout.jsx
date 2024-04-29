@@ -6,11 +6,10 @@ import { Toaster } from 'react-hot-toast';
 const MainLayout = () => {
     return (
         <div className="bg-ceramic-bg dark:bg-slate-900">
-            {/* [url('./bg1.svg')] */}
-<Navbar/>
-        <Outlet/>
-        <Footer/>
-        <Toaster />
+            <Navbar />
+            <Outlet />
+            <Footer />
+            <Toaster />
         </div>
     );
 };

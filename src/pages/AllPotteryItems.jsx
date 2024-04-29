@@ -1,6 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
 
-
 const AllPotteryItems = () => {
     const allData = useLoaderData();
 

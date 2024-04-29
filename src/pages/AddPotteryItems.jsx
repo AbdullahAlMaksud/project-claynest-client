@@ -3,12 +3,10 @@ import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AddPotteryItems = () => {
-
     const { user } = useContext(AuthContext);
 
     const handleAddItem = (e) => {
         e.preventDefault();
-
         const form = e.target;
         const product_name = form.name.value;
         const short_description = form.description.value;
@@ -23,9 +21,7 @@ const AddPotteryItems = () => {
         const imageURL = form.photoURL.value;
         const itemData = { product_name, short_description, subcategory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
         console.log(itemData)
-
         // e.target.reset();
-
 
         fetch(`http://localhost:5000/craftItems`, {
             method: "POST",
@@ -48,8 +44,7 @@ const AddPotteryItems = () => {
     return (
         <div className='w-11/12 mx-auto container mb-10 -z-30'>
             <section className="p-8 lg:px-28 mx-auto bg-sage-green-200 rounded-b-md shadow-md dark:bg-gray-800">
-                <h2 className="text-3xl py-10 font-titillium text-center font-semibold text-gray-700 capitalize dark:text-white">Add Ceramic & Pottery Item</h2>
-                
+                <h2 className="text-3xl py-10 font-titillium text-center font-semibold text-gray-700 capitalize dark:text-white">Add Ceramic & Pottery Item</h2>  
                 <form onSubmit={handleAddItem}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
@@ -59,7 +54,6 @@ const AddPotteryItems = () => {
                                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                             />
                         </div>
-
                         <div>
                             <label className="text-gray-700 dark:text-gray-200 font-semibold">Short Description</label>
                             <input
@@ -67,7 +61,6 @@ const AddPotteryItems = () => {
                                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                             />
                         </div>
-
                         <div>
                             <label className="text-gray-700 dark:text-gray-200 font-semibold">Product Category</label>
                             <select name='category' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" defaultValue="">
@@ -105,7 +98,6 @@ const AddPotteryItems = () => {
                                 <option value={'Made to order'}>Made to order</option>
                             </select>
                         </div>
-
                         <div>
                             <label className="text-gray-700 dark:text-gray-200 font-semibold">Price</label>
                             <input
@@ -123,7 +115,6 @@ const AddPotteryItems = () => {
                                 <option value={'3'}>3</option>
                                 <option value={'4'}>4</option>
                                 <option value={'5'}>5</option>
-
                             </select>
                         </div>
                         <div>
@@ -151,7 +142,6 @@ const AddPotteryItems = () => {
                             />
                         </div>
                     </div>
-
                     <div className="flex justify-end mt-6">
                         <input type="submit" value="Add Products" className="px-8 w-full py-2.5 leading-5 text-white transition-colors duration-300 transform bg-terra-cotta-900 rounded-md hover:bg-terra-cotta-800 focus:outline-none focus:bg-terra-cotta-800 hover:cursor-pointer" />
                     </div>

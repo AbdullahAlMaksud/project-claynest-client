@@ -40,7 +40,6 @@ This website serves as an online platform for ClayNest Inc., providing users wit
   - React Icons: Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
   - React Fast Marquee: React Fast Marquee is a lightweight React component that harnesses the power of CSS animations to create silky smooth marquees.
   - Swiper JS: Swiper JS is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.
-
   - React Fast Marquee: React Fast Marquee is a lightweight React component that harnesses the power of CSS animations to create silky smooth marquees.
 
 - **Backend:**

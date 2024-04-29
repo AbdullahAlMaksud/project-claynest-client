@@ -6,14 +6,12 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-
     const { logIn, googleLogIn, gitHubLogIn } = useContext(AuthContext);
     const [success, setSuccess] = useState('')
     const [signupError, setSignupError] = useState('')
     const newLocation = useLocation();
     const navigate = useNavigate();
     console.log('Location From LogIn', newLocation)
-
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -27,7 +25,6 @@ const Login = () => {
         const formData = { email, password }
         console.log(formData);
         setSuccess('')
-
         logIn(email, password)
             .then(result => {
                 console.log(result.user);
@@ -36,7 +33,6 @@ const Login = () => {
             })
             .catch(error => console.log(error))
     }
-
 
     const handleGoogleLogIn = () => {
         googleLogIn()
@@ -48,29 +44,28 @@ const Login = () => {
             .catch(error => {
                 console.log(error)
                 setSignupError(() => toast.success('Login Failed! Try Again!'));
-                
             }
-        )
+            )
     }
-    
+
     const handleGitHubLogIn = () => {
         gitHubLogIn()
-        .then(result => {
-            console.log(result.user)
-            setSuccess(() => toast.success('Login Successful!'));
-            navigate(newLocation?.state ? newLocation.state : '/');
-        })
-        .catch(error =>{
-            setSignupError(() => toast.success('Login Failed! Try Again!'));
-            console.log(error)
-        } )
+            .then(result => {
+                console.log(result.user)
+                setSuccess(() => toast.success('Login Successful!'));
+                navigate(newLocation?.state ? newLocation.state : '/');
+            })
+            .catch(error => {
+                setSignupError(() => toast.success('Login Failed! Try Again!'));
+                console.log(error)
+            })
     }
+
     return (
         <div className='w-11/12 container mx-auto my-10'>
             <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-full lg:px-10">
                 <div className="hidden bg-cover lg:block lg:w-3/5" style={{ backgroundImage: "url('login.svg')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
                 </div>
-
                 <div className="w-full px-6 py-8 md:px-8 lg:pr-20 lg:w-2/5">
                     <div className="flex justify-center mx-auto">
                         <img className="w-auto h-7 sm:h-8" src="favicon.svg" alt="" />
@@ -78,7 +73,6 @@ const Login = () => {
                     <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
                         Welcome back!
                     </p>
-
                     <a onClick={handleGoogleLogIn} href="#" className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <div className="px-4 py-2">
                             <svg className="w-6 h-6" viewBox="0 0 40 40">
@@ -88,19 +82,14 @@ const Login = () => {
                                 <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
                             </svg>
                         </div>
-
                         <span className="w-5/6 px-4 py-3 font-bold text-center">Login with Google</span>
                     </a>
-
                     <a onClick={handleGitHubLogIn} href="#" className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <div className="px-4 py-2">
                             <FaGithub className='text-2xl' />
                         </div>
                         <span className="w-5/6 px-4 py-3 font-bold text-center">Login with Github</span>
                     </a>
-
-
-
                     <div className="flex items-center justify-between mt-4">
                         <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
                         <p className="text-xs text-center text-gray-500 uppercase dark:text-gray-400">or login
@@ -115,7 +104,6 @@ const Login = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" htmlFor="LoggingEmailAddress">Email Address</label>
                             <input type="email" name='email' placeholder='Enter your email' className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300" />
                         </div>
-
                         <div className="mt-4">
                             <div className="flex justify-between">
                                 <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" htmlFor="loggingPassword">Password</label>
@@ -132,8 +120,6 @@ const Login = () => {
                             </input>
                         </div>
                     </form>
-
-
                     <div className="flex items-center justify-between mt-4">
                         <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                         <Link to={'/register'} href="#" className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">or Sign Up</Link>
