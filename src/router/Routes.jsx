@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyPotteryItems from "../pages/MyPotteryItems";
 import ItemDetails from "../pages/ItemDetails";
 import UpdatePotteryItems from "../pages/UpdatePotteryItems";
+import CategoryWiseProduct from "../pages/CategoryWiseProduct";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,13 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><UpdatePotteryItems/></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
             },
+            {
+                path: '/productsCategory/:category',
+                element: <PrivateRoute><CategoryWiseProduct/></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/productsCategory/${params.category}`)
+            },
+
+
 
         ]
     },

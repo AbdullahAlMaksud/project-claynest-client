@@ -52,13 +52,13 @@ const ContactInfo = () => {
                             </div>
                         </div>
 
-                        <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto">
+                        <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto drop-shadow-lg">
                             
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10529.951514020837!2d90.38706247515164!3d23.750776709587765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sbn!2sbd!4v1714384029450!5m2!1sbn!2sbd"
                             width="100%"
                             height="600"
-                            style={{ border: "0" }}
+                            style={{ border: "0"  }}
                             allowFullScreen=""
                             loading="lazy"
                             className='rounded-lg'

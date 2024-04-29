@@ -12,7 +12,7 @@ const AddPotteryItems = () => {
         const form = e.target;
         const product_name = form.name.value;
         const short_description = form.description.value;
-        const subcaregory_Name = form.category.value;
+        const subcategory_Name = form.category.value;
         const customization = form.customization.value;
         const processing_time = form.processing_time.value;
         const stockStatus = form.stock.value;
@@ -21,7 +21,7 @@ const AddPotteryItems = () => {
         const user_name = form.user_name.value;
         const user_email = form.user_email.value;
         const imageURL = form.photoURL.value;
-        const itemData = { product_name, short_description, subcaregory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
+        const itemData = { product_name, short_description, subcategory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
         console.log(itemData)
 
         // e.target.reset();
