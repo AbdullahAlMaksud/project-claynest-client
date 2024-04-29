@@ -4,29 +4,12 @@ import { HiHome } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import ThemeSwtitcher from "./DarkModeToggle.jsx";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext);
     const PLACES = ['top']
-    
-
-    // const [theme, setTheme] = useState('light');
-
-    // const handleTheme = (e) => {
-    //     if (e.target.checked) {
-    //         setTheme('dark')
-    //     }
-    //     else {
-    //         setTheme('light')
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     localStorage.setItem('theme', theme)
-    //     const currentTheme = localStorage.getItem('theme')
-    //     document.querySelector('html').setAttribute('data-theme', currentTheme)
-    // }, [theme])
 
     const handleLogOut = () => {
         logOut()
@@ -38,10 +21,10 @@ const Navbar = () => {
 
 
     const mainMenu = <>
-        <NavLink to={'/'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2 hover:border-sage-green-700 hover:text-sage-green-700'}>Home</NavLink>
-        <NavLink to={'/allItems'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2 hover:border-sage-green-700 hover:text-sage-green-700'}>All Ceramic & Pottery Items</NavLink>
-        <NavLink to={'/addItem'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2 hover:border-sage-green-700 hover:text-sage-green-700'}>Add Ceramic & Pottery Item</NavLink>
-        <NavLink to={'/myItems'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2 hover:border-sage-green-700 hover:text-sage-green-700'}>My Ceramic & Pottery List</NavLink>
+        <NavLink to={'/'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 dark:text-sage-green-200 dark:border-sage-green-200 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2  dark:text-gray-50 hover:text-sage-green-700'}>Home</NavLink>
+        <NavLink to={'/allItems'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 dark:text-sage-green-200 dark:border-sage-green-200 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2  dark:text-gray-50 hover:text-sage-green-700'}>All Ceramic & Pottery Items</NavLink>
+        <NavLink to={'/addItem'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 dark:text-sage-green-200 dark:border-sage-green-200 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2  dark:text-gray-50 hover:text-sage-green-700'}>Add Ceramic & Pottery Item</NavLink>
+        <NavLink to={'/myItems'} className={({ isActive }) => isActive ? ' border-b-2 border-sage-green-700 dark:text-sage-green-200 dark:border-sage-green-200 text-sage-green-700' : 'border-b-2 border-transparent hover:border-b-2  dark:text-gray-50 hover:text-sage-green-700'}>My Ceramic & Pottery List</NavLink>
     </>
 
     const mainMenuPhone = <>
@@ -78,7 +61,10 @@ const Navbar = () => {
         <div className="min-h-10 bg-transparent hover:lg:bg-white dark:hover:lg:bg-black/30  shadow-md z-50">
             <div className="w-11/12 container mx-auto py-3 lg:py-7 grid grid-cols-5">
                 <div className="col-span-1 flex items-end justify-start">
+                    <div className="flex items-center justify-center">
                     <NavLink to={'/'}><button><HiHome className="text-2xl lg:text-3xl" /></button></NavLink>
+                    <ThemeSwtitcher/>
+                    </div>
                 </div>
 
                 <div className="col-span-3 flex justify-center items-center gap-3">
