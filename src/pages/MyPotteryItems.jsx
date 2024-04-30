@@ -11,7 +11,7 @@ const MyPotteryItems = () => {
     const [item, setItem] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/craftItemsByEmail/${user.email}`)
+        fetch(`https://b9a10-clay-nest-server.vercel.app/craftItemsByEmail/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);
@@ -32,7 +32,7 @@ const MyPotteryItems = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/craftItems/${_id}`, {
+                    fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems/${_id}`, {
                         method: 'DELETE',
                     })
                         .then(res => res.json())

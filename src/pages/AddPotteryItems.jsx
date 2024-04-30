@@ -23,7 +23,7 @@ const AddPotteryItems = () => {
         console.log(itemData)
         // e.target.reset();
 
-        fetch(`http://localhost:5000/craftItems`, {
+        fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(itemData)

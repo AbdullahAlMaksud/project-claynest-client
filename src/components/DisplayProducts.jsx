@@ -8,7 +8,7 @@ const DisplayProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/craftItems')
+        fetch('https://b9a10-clay-nest-server.vercel.app/craftItems')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

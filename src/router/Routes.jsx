@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: ()=>fetch('http://localhost:5000/craftCategory')
+                loader: ()=>fetch('https://b9a10-clay-nest-server.vercel.app/craftCategory')
             },
             {
                 path: '/login',
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/allItems',
                 element: <AllPotteryItems />,
-                loader: () => fetch(`http://localhost:5000/craftItems`)
+                loader: () => fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems`)
             },
             {
                 path: '/addItem',
@@ -49,17 +49,17 @@ const router = createBrowserRouter([
             {
                 path: '/itemDetails/:id',
                 element: <PrivateRoute><ItemDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems/${params.id}`)
             },
             {
                 path: '/updateItem/:id',
                 element: <PrivateRoute><UpdatePotteryItems/></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems/${params.id}`)
             },
             {
                 path: '/productsCategory/:category',
                 element: <PrivateRoute><CategoryWiseProduct/></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/productsCategory/${params.category}`)
+                loader: ({ params }) => fetch(`https://b9a10-clay-nest-server.vercel.app/productsCategory/${params.category}`)
             },
 
 

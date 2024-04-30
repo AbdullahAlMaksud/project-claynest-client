@@ -23,7 +23,7 @@ const UpdatePotteryItems = () => {
         const updateItemData = { product_name, short_description, subcaregory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
         console.log(updateItemData)
 
-        fetch(`http://localhost:5000/craftItems/${_id}`, {
+        fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateItemData),
