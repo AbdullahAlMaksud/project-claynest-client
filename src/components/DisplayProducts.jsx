@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { BiCategory } from "react-icons/bi";
 import { FaStar } from "react-icons/fa6";
 import { FcViewDetails } from "react-icons/fc";
+import { LuBox } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const DisplayProducts = () => {
@@ -35,6 +37,11 @@ const DisplayProducts = () => {
                                 <div className="mt-1 p-2">
                                   <h2 className="text-slate-700 text-xl dark:text-white">{product.product_name}</h2>
                                   <p className="text-slate-400 mt-1 truncate">{product.short_description}</p>
+                                  <div className='flex gap-5 text-base'>
+                                                
+                                            <p className="text-slate-900 flex items-center gap-2  mt-1"><BiCategory/><span>{product.subcategory_Name}</span></p>
+                                            <p className="text-slate-900 flex items-center gap-2  mt-1"><LuBox/><span>{product.stockStatus}</span></p>
+                                            </div>
                                   <div className="mt-3 flex items-end justify-between">
                                     <p>
                                       <span className="text-lg font-bold text-blue-500 dark:text-blue-500">${product.price}</span>

@@ -1,17 +1,18 @@
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdatePotteryItems = () => {
     const data = useLoaderData()
     console.log(data)
-    const { _id, product_name, short_description, subcaregory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL } = data;
+    const { _id, product_name, short_description, subcategory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL } = data;
 
     const handleUpdateData = e => {
         e.preventDefault();
         const form = e.target;
         const product_name = form.name.value;
         const short_description = form.description.value;
-        const subcaregory_Name = form.category.value;
+        const subcategory_Name = form.category.value;
         const customization = form.customization.value;
         const processing_time = form.processing_time.value;
         const stockStatus = form.stock.value;
@@ -20,7 +21,7 @@ const UpdatePotteryItems = () => {
         const user_name = form.user_name.value;
         const user_email = form.user_email.value;
         const imageURL = form.photoURL.value;
-        const updateItemData = { product_name, short_description, subcaregory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
+        const updateItemData = { product_name, short_description, subcategory_Name, customization, processing_time, stockStatus, price, rating, user_name, user_email, imageURL }
         console.log(updateItemData)
 
         fetch(`https://b9a10-clay-nest-server.vercel.app/craftItems/${_id}`, {
@@ -42,6 +43,11 @@ const UpdatePotteryItems = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>
+                    Update Products - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <div className='w-11/12 mx-auto container mb-10 -z-30'>
                 <section className="p-8 lg:px-28 mx-auto bg-sage-green-200 rounded-b-md shadow-md dark:bg-gray-800">
                     <h2 className="text-3xl py-10 font-titillium text-center font-semibold text-gray-700 capitalize dark:text-white">Update Ceramic & Pottery Item</h2>
@@ -63,8 +69,8 @@ const UpdatePotteryItems = () => {
                             </div>
                             <div>
                                 <label className="text-gray-700 dark:text-gray-200 font-semibold">Product Category</label>
-                                <select name='category' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" defaultValue={subcaregory_Name}>
-                                    <option disabled value={subcaregory_Name}>{subcaregory_Name}</option>
+                                <select name='category' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" defaultValue={subcategory_Name}>
+                                    <option disabled value={subcategory_Name}>{subcategory_Name}</option>
                                     <option value={'Clay-made pottery'}>Clay-made pottery</option>
                                     <option value={'Stoneware'}>Stoneware</option>
                                     <option value={'Porcelain'}>Porcelain</option>

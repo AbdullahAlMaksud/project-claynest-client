@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllPotteryItems = () => {
@@ -5,6 +6,11 @@ const AllPotteryItems = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>
+                All Products - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <section className="container px-4 mx-auto">
                 <div className="flex flex-col my-10">
                     <h2 className="text-3xl text-center pb-10 font-semibold font-titillium text-sage-green-800">All Ceramic & Pottey Item</h2>

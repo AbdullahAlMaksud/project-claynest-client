@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const AddPotteryItems = () => {
     const { user } = useContext(AuthContext);
@@ -43,6 +44,11 @@ const AddPotteryItems = () => {
 
     return (
         <div className='w-11/12 mx-auto container mb-10 -z-30'>
+            <Helmet>
+                <title>
+                Add Products - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <section className="p-8 lg:px-28 mx-auto bg-sage-green-200 rounded-b-md shadow-md dark:bg-gray-800">
                 <h2 className="text-3xl py-10 font-titillium text-center font-semibold text-gray-700 capitalize dark:text-white">Add Ceramic & Pottery Item</h2>  
                 <form onSubmit={handleAddItem}>

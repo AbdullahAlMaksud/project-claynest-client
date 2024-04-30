@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 
 const ErrorPages = () => {
@@ -8,6 +9,11 @@ const ErrorPages = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>
+                Oops! - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <section className="bg-sage-green-100 dark:bg-gray-900">
                 <div className="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
                     <div className="w-full lg:w-1/2">

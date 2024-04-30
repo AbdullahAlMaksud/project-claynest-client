@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -63,6 +64,11 @@ const Login = () => {
 
     return (
         <div className='w-11/12 container mx-auto my-10'>
+            <Helmet>
+                <title>
+                    Login - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-full lg:px-10">
                 <div className="hidden bg-cover lg:block lg:w-3/5" style={{ backgroundImage: "url('login.svg')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
                 </div>

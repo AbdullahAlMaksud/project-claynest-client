@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 
 const CategoryWiseProduct = () => {
@@ -6,6 +7,11 @@ const CategoryWiseProduct = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>
+                Category - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
             <div className='w-11/12 mx-auto container my-10'>
                 {
                     products.map((product, idx) => <div key={idx} className='border rounded-xl p-5 shadow-lg flex flex-col md:flex-row justify-center md:justify-around items-center bg-ocean-blue-200/10'>

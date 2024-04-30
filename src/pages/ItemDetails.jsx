@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
 const ItemDetails = () => {
@@ -7,6 +8,11 @@ const ItemDetails = () => {
 
     return (
         <div className='w-11/12 mx-auto container my-10'>
+            <Helmet>
+                <title>
+                   Products Details - {product_name}
+                </title>
+            </Helmet>
             <div className='border rounded-xl p-5 shadow-lg grid grid-cols-1 lg:grid-cols-2 justify-center md:justify-around items-center bg-ocean-blue-200/10'>
                 <div className='mb-3 md:col-span-1 md:px-2'>
                     <img src={imageURL} className='w-full md:w-full md:h-96 h-52 lg:rounded-xl rounded-t-xl object-cover mx-auto' alt="" />

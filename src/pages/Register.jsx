@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -70,6 +71,12 @@ const Register = () => {
 
     return (
         <div className='w-11/12 container mx-auto my-10'>
+            <Helmet>
+                <title>
+                    Register - ClayNest | Where Every Piece Finds Its Perfect Nest
+                </title>
+            </Helmet>
+            
             <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-full lg:px-10">
                 <div className="hidden bg-cover lg:block lg:w-2/5" style={{ backgroundImage: "url('register.svg')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
                 </div>
