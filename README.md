@@ -32,6 +32,9 @@ ClayNest Inc. is an online platform offering a wide range of ceramics and potter
   - Express.js
   - Node.js
 
+## Backend Repository:
+  - https://github.com/AbdullahAlMaksud/project-claynest-server.git
+
 ## Installation
 
 To get started with the development or deployment of this project, follow these steps:
@@ -71,6 +74,6 @@ Check out the live demo of the ClayNest project at: https://project-claynest.web
 Contributions are welcome! Please feel free to submit a Pull Request or open an issue to discuss any changes.
 
 ### Developed by Abdullah Al Maksud
-Portfolio: https://portfolio-abdullahalmaksud.web.app
-Email: maksud.workspace@gmail.com
-Phone: +880 1767 211795
+- Portfolio: https://portfolio-abdullahalmaksud.web.app
+- Email: maksud.workspace@gmail.com
+- Phone: +880 1767 211795
